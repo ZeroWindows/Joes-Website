@@ -1,0 +1,260 @@
+/*Changing the way the borders of box's work*/
+* {
+    box-sizing: border-box;
+}
+
+/*Setting up the look of the website*/
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+/*Setting up the font for the whole page*/
+html {
+    font-family: "Raleway", sans-serif;
+}
+
+H1 {
+    color: #F7A777;
+    padding-bottom: 0.1%;
+    font-size: 180%
+}
+
+/*Paragraph stuff*/
+p {
+    line-height: 2;
+    margin: auto;
+}
+
+/*Setting up the header; making the background color, setting the padding, and setting the margin*/
+.header {
+    display: block;
+    background-color: white;
+    color: #ffffff;
+	margin-left: auto;
+    margin-right: auto;
+    padding: 0.5%;
+    float: inherit;
+    text-align: center;
+}
+
+.JM {
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+
+
+/*Setting up the bottom bar; making it green with white text, putting text in the center, setting the font size, setting padding, and giving the box a shadow*/
+.aside {
+    background-color: #5b9071;
+    padding: 10px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    margin-bottom: 0.5%;
+}
+
+/*Setting up the footer; making it orange with white text, putting text in the center, setting the font size, and setting padding*/
+.footer {
+    background-color: #f7a777;
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    padding: 15px;
+}
+
+/*Having no underlines on the links*/
+a {
+	text-decoration: none;
+}
+
+/*Setting up the title(the word/s that tell you where you are; curving the edges, green box with white writing, text in the center, adding a shadow*/
+.title {
+    border-radius: 15px 50px;
+	background-color: #5b9071; 
+	color: #ffffff;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    padding: 0.5%;
+}
+
+/*Setting up the cols*/
+[class*="col-"] {
+    float: inherit;
+    padding: 15px;
+}
+
+.col-3 {
+    float: none;
+    padding: 0.5%;
+    margin: auto;
+}
+
+.col-6 {
+    float: none;
+    padding: 0.5%;
+    margin: auto;
+}
+
+.col-12 {
+    float: none;
+    align-self: center;
+    text-align: center;
+    align-content: center;
+    padding: 0.5%;
+}
+
+/*Adjusting the website for different screen sizes */ 
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+
+/* For desktop: */
+@media only screen and (min-width: 870px) {
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+
+/*Checkboxes*/
+.checkbox-contain *,
+.checkbox-contain *::before,
+.checkbox-contain *::after {
+  box-sizing: content-box !important;
+}
+
+.checkbox-contain input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.checkbox-contain span {
+  line-height: 1.5;
+  font-size: 1.15rem;
+  font-family: inherit;
+}
+
+.checkbox-contain {
+  display: table;
+  position: relative;
+  padding-left: 2.45rem;
+  cursor: pointer;
+  margin-bottom: 0.71rem;
+}
+
+.checkbox-contain input[type="checkbox"] ~ .checkbox-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.25rem;
+  width: 1.25rem;
+  background: #F7A777;
+  transition: background 250ms;
+  border: none;
+  border-radius: 0.2rem;
+}
+
+.checkbox-contain input[type="checkbox"] ~ .checkbox-input::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 7px;
+  top: 3px;
+  width: 0.3rem;
+  height: 0.7rem;
+  border: solid #F7A777;
+  border-width: 0 2px 2px 0;
+  transition: background 250ms;
+  transform: rotate(45deg);
+}
+
+.checkbox-contain input[type="checkbox"]:disabled ~ .checkbox-input::after {
+  border-color: #F7A777;
+}
+
+.checkbox-contain input:checked ~ .checkbox-input::after {
+  display: block;
+}
+
+.checkbox-contain:hover input[type="checkbox"]:not([disabled]) ~ .checkbox-input,
+.checkbox-contain input[type="checkbox"]:focus ~ .checkbox-input {
+  background: #5B9071;
+  border-color: #5B9071;
+  outline: max(2px, 0.15em) solid #F7A777;  
+  outline-offset: max(2px, 0.15em);
+}
+
+.checkbox-contain input:focus ~ .checkbox-input {
+  box-shadow: 0 0 0 2px #60a5fa;
+  outline: max(2px, 0.15em) solid #F7A777;  
+  outline-offset: max(2px, 0.15em);
+}
+
+.checkbox-contain input[type="checkbox"]:checked ~ .checkbox-input {
+  background: #5B9071;
+  border-color: #5B9071;
+}
+
+.checkbox-contain input[type="checkbox"]:disabled ~ .checkbox-input{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.checkbox-contain:hover input[type="checkbox"]:not([disabled]):checked ~ .checkbox-input,
+.checkbox-contain input[type="checkbox"]:checked:focus ~ .checkbox-input {
+  background: #5B9071;
+  border-color: #F7A777;
+  outline: max(2px, 0.15em) solid #F7A777;  
+  outline-offset: max(2px, 0.15em);
+}
+
+form {
+    align-items: center;
+}
+label {
+      margin-left: 30%;
+}
+
+/*Submit button*/
+.btn{
+    text-align: center;
+    font-weight: 0;
+    font-size: 15px;
+    color: #fff;
+    background-color: #5b9071;
+    padding: 0.70vw 3vw;
+    border: solid #5b9071 2px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    border-radius: 10px 45px;
+    transition : 1183ms;
+    transform: translateY(0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    float: inherit;
+}
+
+.btn:hover{
+    transition : 1183ms;
+    padding: 10px 70px;
+    transform : translateY(-5px);
+    transform: translatex(-13px);
+    background-color: #fff;
+    color: #f7a777;
+    border: solid 2px #5b9071;
+}
